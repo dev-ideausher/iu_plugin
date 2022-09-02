@@ -3,5 +3,4 @@ commands:
   buildx: flutter pub run build_runner build --delete-conflicting-outputs
   watch: flutter pub run build_runner watch
   push: git push origin master
-
-
+  velo: flutter pub add velocityx && flutter pub add get
