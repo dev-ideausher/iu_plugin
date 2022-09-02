@@ -1,0 +1,24 @@
+name: mbc
+description: A scaffold with mobx dependencies.
+author: Pedro Bissonho <pedro.bissonho@gmail.com>
+
+structure:
+  - ui:
+    - pages
+    - shared 
+    - themes
+  - data:
+    - models
+    - repositories
+  - controllers:
+   
+test_structure:
+  - ui:
+  - data:
+  - controllers:
+
+dependencies: 
+  koin: 
+   
+dev_dependencies:
+  build_runner:
