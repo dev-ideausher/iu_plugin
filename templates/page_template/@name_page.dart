@@ -13,6 +13,7 @@ class _@NamePageState extends State<@NamePage> {
         child: Column(
           children: <Widget>[
             Text("@msg"),
+            Container(),
           ],
         ),
       ),
