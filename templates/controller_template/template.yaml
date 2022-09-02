@@ -1,5 +1,5 @@
 name: controller
 description: Create controller.
-to: lib/controllers
+to: lib/@name
 args:
   - name
