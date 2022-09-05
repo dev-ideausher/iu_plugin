@@ -1,5 +1,5 @@
 name: responsive
 description: Create controller.
-to: lib/app/@name
+to: lib/app/services
 args:
   - name
