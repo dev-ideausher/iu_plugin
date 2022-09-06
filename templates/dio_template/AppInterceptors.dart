@@ -14,7 +14,7 @@ class AppInterceptors extends Interceptor {
 
   @override
   FutureOr<dynamic> onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers = {"token": Get.find<GetStorageService>().token};
+    options.headers = {"token": Get.find<GetStorageService>().encjwToken};
     isOverlayLoader ? DialogHelper.showLoading() : null;
     super.onRequest(options, handler);
   }
