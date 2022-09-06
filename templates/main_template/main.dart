@@ -19,8 +19,7 @@ Future<void> main() async {
   );
 
   return runApp(
-    Sizer(
-      builder: (context, orientation, deviceType) {
+
         return GetMaterialApp(
           defaultTransition: Transition.fade,
           smartManagement: SmartManagement.full,
@@ -30,8 +29,7 @@ Future<void> main() async {
           initialBinding: SplashBinding(),
           getPages: AppPages.routes,
         );
-      },
-    ),
+    
   );
 }
 
