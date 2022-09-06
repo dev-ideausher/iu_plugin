@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'enigma.dart';
+
 class GetStorageService extends GetxService {
   static final _runData = GetStorage('runData');
 
@@ -10,17 +12,11 @@ class GetStorageService extends GetxService {
     return this;
   }
 
-  int get themeMode =>
-      _runData.read('themeMode') ?? 0; // 2:follow system 1:dark 0:light
-  set themeMode(int themeMode) => _runData.write('themeMode', themeMode);
+  // we are utilisig encrypt class we decrypt once we read and encrypt before write.
 
-  bool get isLoggedIn => _runData.read('isLoggedIn') ?? false;
+  String get encjwToken => decryptAESCryptoJS(_runData.read('jwToken')) ?? '';
 
-  set isLoggedIn(bool isLoggedIn) => _runData.write('isLoggedIn', isLoggedIn);
-
-  String get token => _runData.read('token') ?? '';
-
-  set token(String token) => _runData.write('token', token);
+  set encjwToken(String val) => _runData.write('jwToken', encryptAESCryptoJS(val));
 
   void logout() {
     _runData.erase();
