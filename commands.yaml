@@ -1,4 +1,5 @@
-commands: 
+commands:
+  auth: "flutter pub add firebase_auth && pub add flutter_facebook_auth && pub add google_sign_in && pub add sign_in_with_apple && pub add twitter_login ** iu authiu"
   build: "flutter pub run build_runner build"
   buildx: "flutter pub run build_runner build --delete-conflicting-outputs"
   push: "git push origin master"

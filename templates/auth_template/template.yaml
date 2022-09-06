@@ -1,0 +1,7 @@
+name: authiu
+description: Create auth in services
+to: lib/app/services
+args:
+  - name
+
+    
