@@ -2,5 +2,5 @@ commands:
   build: "flutter pub run build_runner build"
   buildx: "flutter pub run build_runner build --delete-conflicting-outputs"
   push: "git push origin master"
-  velo: "flutter pub add sizer && pub add get && pub add get_storage && pub add dio && pub add google_fonts && pub add flutter_svg ** iu servicesiu && dioiu && themesiu && mainiu"
+  velo: "flutter pub add get && pub add get_storage && pub add dio && pub add google_fonts && pub add flutter_svg ** iu servicesiu && dioiu && themesiu && mainiu"
   watch: "flutter pub run build_runner watch"
