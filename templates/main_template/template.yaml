@@ -1,0 +1,5 @@
+name: mainiu
+description: Create themes.
+to: lib
+args:
+  - name

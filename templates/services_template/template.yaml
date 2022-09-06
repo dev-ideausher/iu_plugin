@@ -1,0 +1,5 @@
+name: servicesiu
+description: Create services.
+to: lib/app/services
+args:
+  - name

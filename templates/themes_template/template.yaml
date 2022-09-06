@@ -1,0 +1,5 @@
+name: themesiu
+description: Create themes.
+to: lib/app/themes
+args:
+  - name

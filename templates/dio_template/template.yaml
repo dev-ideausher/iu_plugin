@@ -1,0 +1,7 @@
+name: dioiu
+description: Create dio in services
+to: lib/app/services/dio
+args:
+  - name
+
+    
