@@ -1,4 +1,4 @@
-import 'package:cli_test/app/modules/home/bindings/home_binding.dart';
+import 'app/modules/home/bindings/home_binding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
