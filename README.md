@@ -18,7 +18,7 @@ After that, you need to set the Environmental path variable:
 export PATH="$PATH:/Users/"yourpcname"/.fastcli/bin"
 ```
 
-To setup dependencies required with services, dio, etc. run :
+To setup services, dio, etc. and dependencies required with them, run :
 
 ```
 iu run velo
