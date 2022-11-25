@@ -5,3 +5,4 @@ commands:
   push: "git push origin master"
   velo: "flutter pub add get && pub add get_storage && pub add dio && pub add google_fonts && pub add flutter_svg && pub add encrypt && pub add tuple && pub add crypto ** iu servicesiu && dioiu && mainiu"
   watch: "flutter pub run build_runner watch"
+  refresh: "fast plugin remove --name iu && plugin add git https://github.com/dev-ideausher/iu_plugin.git"
