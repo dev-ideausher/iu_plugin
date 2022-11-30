@@ -9,6 +9,7 @@ import '../controllers/chats_controller.dart';
 class ChatsView extends GetView<ChatsController> {
   const ChatsView({Key? key}) : super(key: key);
   @override
+    ///TODO:Add this page in routes file
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
