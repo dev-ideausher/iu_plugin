@@ -1,0 +1,7 @@
+name: chatiu
+description: Create chat UI modules
+to: lib/app/modules
+args:
+  - name
+
+    
