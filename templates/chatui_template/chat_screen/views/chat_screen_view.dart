@@ -9,6 +9,7 @@ import '../controllers/chat_screen_controller.dart';
 class ChatScreenView extends GetView<ChatScreenController> {
   const ChatScreenView({Key? key}) : super(key: key);
   @override
+
   ///TODO:Add this page in routes file
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,32 +19,6 @@ class ChatScreenView extends GetView<ChatScreenController> {
           //  crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            YourCustomizedContainer(
-                isBorder: true,
-                borderRadius: 4.kh,
-                // borderColor: ColorUtil.brandLightRed1,
-                // color: ColorUtil.brandLightRed1.withOpacity(0.5),
-                child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 12.kw, vertical: 8.kh),
-                  child: RichText(
-                    text: TextSpan(text: '${'note'.tr}: ',
-                        // style: TextStyleUtil.textNunintoSansW700(
-                        //     fontSize: 16.kh, color: const Color(0xffD62A3D)),
-                        children: [
-                          TextSpan(
-                            text: '${'chat_warning'.tr} 5%. ',
-                            // style: TextStyleUtil.textNunintoSansW400(
-                            //     fontSize: 16.kh,
-                            //     color: const Color(0xffD62A3D)),
-                          ),
-                          TextSpan(
-                            text: '${'task_will_be'.tr} 7:00 PM',
-                          ),
-                        ]),
-                  ),
-                )),
-            const Spacer(),
             Text(
               'today'.tr,
               // style: TextStyleUtil.textNunintoSansW700(fontSize: 16.kh),
