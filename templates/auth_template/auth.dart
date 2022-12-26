@@ -22,6 +22,7 @@ class Auth extends GetxController {
   }
 
   apple() async {
+    //TODO: do the required setup mentioned in https://pub.dev/packages/sign_in_with_apple
     final result = await auth
         .signInWithApple(
             //TODO: add your own handler id from firebase console
