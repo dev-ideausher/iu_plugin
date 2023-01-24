@@ -3,6 +3,6 @@ commands:
   build: "flutter pub run build_runner build"
   buildx: "flutter pub run build_runner build --delete-conflicting-outputs"
   push: "git push origin master"
-  velo: "flutter pub add get && pub add get_storage && pub add dio && pub add google_fonts && pub add new_version_plus && pub add lottie && pub add flutter_svg && pub add encrypt && pub add tuple && pub add crypto && pub add cached_network_image ** iu servicesiu && dioiu && mainiu"
+  velo: "flutter pub add get && pub add get_storage && pub add dio && pub add google_fonts && pub add new_version_plus && pub add lottie && pub add flutter_svg && pub add encrypt && pub add tuple && pub add crypto && pub add cached_network_image ** iu servicesiu && dioiu && mainiu && assetsiu"
   watch: "flutter pub run build_runner watch"
   refresh: "fast plugin remove --name iu && plugin add git https://github.com/dev-ideausher/iu_plugin.git"
