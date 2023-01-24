@@ -1,0 +1,7 @@
+name: assetsiu
+description: App version update
+to: assets/lottiefiles
+args:
+  - name
+
+    
