@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:nema/app/services/responsiveSize.dart';
 import 'package:new_version_plus/new_version_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_box/services/responsive_size.dart';
-import 'package:ticket_box/services/textstyles.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'Strings.dart';
+
+import 'TextStyleUtil.dart';
 import 'colors.dart';
 
 ///Note:  it will work only if app is released in all contries for particular country additional config is required
@@ -21,22 +21,32 @@ abstract class Versionk {
       final status = await newVersion.getVersionStatus();
 
       if (status != null) {
-        if (int.parse(status.localVersion.split('.')[0]) < int.parse(status.storeVersion.split('.')[0]) && status.canUpdate) {
+        if (int.parse(status.localVersion.split('.')[0]) <
+                int.parse(status.storeVersion.split('.')[0]) &&
+            status.canUpdate) {
           showUpdateDialog(
-              isMandatory: true, localver: status.localVersion, storever: status.storeVersion, releaseNote: status.releaseNotes ?? '', appStoreLink: status.appStoreLink);
+              isMandatory: true,
+              localver: status.localVersion,
+              storever: status.storeVersion,
+              releaseNote: status.releaseNotes ?? '',
+              appStoreLink: status.appStoreLink);
         } else if (status.canUpdate) {
           showUpdateDialog(
-              isMandatory: false, localver: status.localVersion, storever: status.storeVersion, releaseNote: status.releaseNotes ?? '', appStoreLink: status.appStoreLink);
+              isMandatory: false,
+              localver: status.localVersion,
+              storever: status.storeVersion,
+              releaseNote: status.releaseNotes ?? '',
+              appStoreLink: status.appStoreLink);
           //minor update
         }
       }
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
   void showUpdateDialog(
-      {String title = Strings.ksAPP_NAME + ' New Update!',
+      {String title = ' New Update!',
       String? localver = '',
       String? storever = '',
       bool isMandatory = false,
@@ -57,39 +67,31 @@ abstract class Versionk {
               height: 100,
               fit: BoxFit.fill,
             ),
-            Container(
-              child: Text(
-                'Yay! there is new update from $localver to $storever',
-                textAlign: TextAlign.center,
-              ),
+            Text(
+              'Yay! there is new update from $localver to $storever',
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 20.kh),
-            Container(
-              child: Text(
-                isMandatory ? 'Please update now!' : 'Would you like to update?',
-                textAlign: TextAlign.center,
-              ),
+            Text(
+              isMandatory ? 'Please update now!' : 'Would you like to update?',
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 20.kh),
             Align(
               alignment: Alignment.centerLeft,
-              child: Container(
-                child: Text(
-                  'Release Note:',
-                  style: TextStyleUtil.plusJakartaSansStyleS14W600(
-                    color: ColorUtil.kdark,
-                  ),
-                  textAlign: TextAlign.left,
+              child: Text(
+                'Release Note:',
+                style: TextStyleUtil.textNimbusSanLStyleS14Wregular(
+                  color: Colors.black,
                 ),
+                textAlign: TextAlign.left,
               ),
             ),
             Align(
               alignment: Alignment.centerLeft,
-              child: Container(
-                child: Text(
-                  releaseNote,
-                  textAlign: TextAlign.left,
-                ),
+              child: Text(
+                releaseNote,
+                textAlign: TextAlign.left,
               ),
             ),
             Row(
@@ -104,7 +106,7 @@ abstract class Versionk {
                         child: Text(
                           'Later',
                           style: TextStyle(
-                            color: ColorUtil.lightOrange,
+                            color: Get.context!.brandColor1,
                             fontSize: 16.0,
                           ),
                         ),
@@ -114,9 +116,10 @@ abstract class Versionk {
                     await launchUrl(Uri.parse(appStoreLink));
                   },
                   style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      ColorUtil.lightOrange,
+                      Get.context!.brandColor2,
                     ),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
@@ -124,15 +127,15 @@ abstract class Versionk {
                           12.kh,
                         ),
                         side: BorderSide(
-                          color: ColorUtil.lightOrange,
+                          color: Get.context!.brandColor1,
                         ),
                       ),
                     ),
                   ),
-                  child: const Text(
+                  child: Text(
                     'Update Now',
                     style: TextStyle(
-                      color: ColorUtil.kprimarywhite,
+                      color: Get.context!.brandColor2,
                       fontSize: 16.0,
                     ),
                   ),
