@@ -7,16 +7,20 @@ class DioClient {
 // dio instance
   final Dio _dio;
 
-  bool isOverlayLoader ;
-  bool showSnakbar ;
+  bool isOverlayLoader;
+  bool showSnakbar;
 
-  DioClient(this._dio, {this.isOverlayLoader = false, this.showSnakbar = false}) {
+  DioClient(this._dio,
+      {this.isOverlayLoader = false, this.showSnakbar = false}) {
     _dio
       ..options.baseUrl = Endpoints.baseUrl
-      ..options.connectTimeout = Endpoints.connectionTimeout
-      ..options.receiveTimeout = Endpoints.receiveTimeout
+      ..options.connectTimeout =
+          const Duration(milliseconds: Endpoints.connectionTimeout)
+      ..options.receiveTimeout =
+          const Duration(milliseconds: Endpoints.receiveTimeout)
       ..options.responseType = ResponseType.json
-      ..interceptors.add(AppInterceptors(isOverlayLoader: isOverlayLoader, showSnakbar: showSnakbar));
+      ..interceptors.add(AppInterceptors(
+          isOverlayLoader: isOverlayLoader, showSnakbar: showSnakbar));
   }
 
 // Get:-----------------------------------------------------------------------
@@ -112,18 +116,16 @@ class DioClient {
     }
   }
 
-
-
   // Patch:-----------------------------------------------------------------------
   Future<Response> patch(
-      String url, {
-        data,
-        Map<String, dynamic>? queryParameters,
-        Options? options,
-        CancelToken? cancelToken,
-        ProgressCallback? onSendProgress,
-        ProgressCallback? onReceiveProgress,
-      }) async {
+    String url, {
+    data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
     try {
       final Response response = await _dio.patch(
         url,
@@ -139,5 +141,4 @@ class DioClient {
       rethrow;
     }
   }
-
 }
