@@ -1,6 +1,6 @@
 # IU Plugin
 
-Assuming you have done all the steps mentioned [here](https://github.com/dev-ideausher/iu.cli-master#readme), this is the plugin which we will use to generate the code template.
+Assuming you have done all the steps mentioned [here](https://github.com/dev-ideausher/fast.cli#readme), this is the plugin which we will use to generate the code template.
 
 ## Installation
 
