@@ -56,7 +56,7 @@ Tuple2<Uint8List, Uint8List> deriveKeyAndIV(String passphrase, Uint8List salt) {
   Uint8List preHash = Uint8List(0);
 
   while (!enoughBytesForKey) {
-    int preHashLength = currentHash.length + password.length + salt.length;
+//     int preHashLength = currentHash.length + password.length + salt.length;
     if (currentHash.isNotEmpty) {
       preHash = Uint8List.fromList(currentHash + password + salt);
     } else {
