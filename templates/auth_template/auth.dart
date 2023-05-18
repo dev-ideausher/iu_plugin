@@ -6,7 +6,7 @@ import 'package:stacked_firebase_auth/stacked_firebase_auth.dart';
 import 'storage.dart';
 import 'dart:developer';
 
-class Auth extends GetxController {
+class Auth extends GetxService {
   final auth = FirebaseAuthenticationService();
   final _facebookLogin = FacebookAuth.instance;
   AuthCredential? _pendingCredential;
