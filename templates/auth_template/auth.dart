@@ -108,4 +108,15 @@ class Auth extends GetxController {
     log(Get.find<GetStorageService>().getEncjwToken);
     debugPrint('i am user id${Get.find<GetStorageService>().getFirebaseUid}');
   }
+  
+    Future<void> logOutUser() async {
+    DialogHelper.showLoading();
+    // erase the user's token and data in GetStorageService
+    Get.find<GetStorageService>().logout();
+    // firbase logout
+    auth.logout();
+    // navigate to login page
+    // await Get.offAllNamed(Routes.LOGIN);
+    await DialogHelper.hideDialog();
+  }
 }
