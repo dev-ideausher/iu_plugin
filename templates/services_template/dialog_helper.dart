@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'colors.dart';
-import 'responsiveSize.dart';
+import 'responsive_size.dart';
 
 class DialogHelper {
   static void showLoading([String? message]) {
