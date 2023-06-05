@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'textstyles.dart';
+import 'responsive_size.dart';
 import 'responsive_size.dart';
 import 'colors.dart';
 
