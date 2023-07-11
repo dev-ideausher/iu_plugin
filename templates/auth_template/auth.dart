@@ -105,7 +105,7 @@ class Auth extends GetxService {
     final mytoken = await _firebaseAuth.currentUser!.getIdToken(true);
     final fireUid = _firebaseAuth.currentUser!.uid;
 
-    Get.find<GetStorageService>().encjwToken = mytoken;
+    Get.find<GetStorageService>().setEncjwToken = mytoken;
     Get.find<GetStorageService>().setFirebaseUid = fireUid;
     log(Get.find<GetStorageService>().getEncjwToken);
     debugPrint('i am user id${Get.find<GetStorageService>().getFirebaseUid}');
