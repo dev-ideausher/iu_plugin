@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import 'AppInterceptors.dart';
+import 'app_interceptors.dart';
 import 'endpoints.dart';
 
 class DioClient {
