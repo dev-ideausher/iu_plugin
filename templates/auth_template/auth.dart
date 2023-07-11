@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:stacked_firebase_auth/stacked_firebase_auth.dart';
 import 'storage.dart';
 import 'dart:developer';
+import 'dialog_helper.dart';
+
 
 class Auth extends GetxService {
   final auth = FirebaseAuthenticationService();
