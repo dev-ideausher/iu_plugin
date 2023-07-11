@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:nema/app/services/responsiveSize.dart';
+import 'responsive_size.dart';
 import 'package:new_version_plus/new_version_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'TextStyleUtil.dart';
+import 'text_style_util.dart';
 import 'colors.dart';
 
 ///Note:  it will work only if app is released in all contries for particular country additional config is required
