@@ -1,0 +1,7 @@
+name: constantsiu
+description: Create Constants in App Module
+to: lib/app/constants
+args:
+  - name
+
+    

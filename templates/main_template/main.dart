@@ -10,19 +10,23 @@ Future<void> main() async {
 
   await initGetServices();
   SystemChrome.setPreferredOrientations(
-    [
-      DeviceOrientation.portraitUp,
-    ],
+    [DeviceOrientation.portraitUp],
   );
 
-  return runApp(GetMaterialApp(
-    defaultTransition: Transition.fade,
-    smartManagement: SmartManagement.full,
-    debugShowCheckedModeBanner: false,
-    title: "Ticket Checker",
-    initialRoute: AppPages.INITIAL,
-    initialBinding: HomeBinding(),
-    getPages: AppPages.routes,
+  return runApp(GestureDetector(
+    onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+    child: GetMaterialApp(
+      // theme: AppTheme.light,
+      // darkTheme: AppTheme.dark,
+      defaultTransition: Transition.fade,
+      smartManagement: SmartManagement.full,
+      debugShowCheckedModeBanner: false,
+      locale: const Locale('en', 'US'),
+      translationsKeys: AppTranslation.translations,
+      initialRoute: AppPages.INITIAL,
+      initialBinding: HomeBinding(),
+      getPages: AppPages.routes,
+    ),
   ));
 }
 

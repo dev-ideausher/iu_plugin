@@ -1,0 +1,7 @@
+name: componentsiu
+description: Create Components in App Module
+to: lib/app/components
+args:
+  - name
+
+    
