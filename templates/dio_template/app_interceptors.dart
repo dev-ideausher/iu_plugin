@@ -39,7 +39,7 @@ class AppInterceptors extends Interceptor {
   }
 
   @override
-  Future<dynamic> onError(DioError err, ErrorInterceptorHandler handler) async {
+  Future<dynamic> onError(DioException err, ErrorInterceptorHandler handler) async {
     super.onError(err, handler);
 
     try {
