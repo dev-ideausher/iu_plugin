@@ -156,6 +156,12 @@ dependencies:
   get_storage: ^2.1.0
   connectivity_plus: ^5.0.0
   intl: ^0.18.0
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+dev_dependencies:
+  build_runner: ^2.4.11
+  freezed: ^2.5.7
+  json_serializable: ^6.9.0
 ```
 
 ## Initialization

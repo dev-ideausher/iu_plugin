@@ -4,70 +4,38 @@ import 'dart:developer' as developer;
 import 'api_response.dart';
 import 'endpoints.dart';
 import 'local_data_source.dart';
+import 'models/user.dart';
 import 'remote_data_source.dart';
 import 'repository.dart';
-
-/// Example User Model
-class UserModel {
-  final String id;
-  final String name;
-  final String email;
-  final String? avatar;
-
-  UserModel({
-    required this.id,
-    required this.name,
-    required this.email,
-    this.avatar,
-  });
-
-  factory UserModel.fromJson(Map<String, dynamic> json) {
-    return UserModel(
-      id: json['id'] as String? ?? '',
-      name: json['name'] as String? ?? '',
-      email: json['email'] as String? ?? '',
-      avatar: json['avatar'] as String?,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'name': name,
-      'email': email,
-      'avatar': avatar,
-    };
-  }
-}
 
 /// Example User Remote Data Source
 class UserRemoteDataSource extends RemoteDataSource {
   /// Get user profile
-  Future<ApiResponse<UserModel>> getUserProfile(String userId) async {
-    return await get<UserModel>(
+  Future<ApiResponse<User>> getUserProfile(String userId) async {
+    return await get<User>(
       endpoint: Endpoints.apiPath('/users/$userId'),
-      parser: (data) => UserModel.fromJson(data as Map<String, dynamic>),
+      parser: (data) => User.fromJson(data as Map<String, dynamic>),
     );
   }
 
   /// Update user profile
-  Future<ApiResponse<UserModel>> updateUserProfile({
+  Future<ApiResponse<User>> updateUserProfile({
     required String userId,
     required Map<String, dynamic> data,
   }) async {
-    return await put<UserModel>(
+    return await put<User>(
       endpoint: Endpoints.apiPath('/users/$userId'),
       body: data,
-      parser: (data) => UserModel.fromJson(data as Map<String, dynamic>),
+      parser: (data) => User.fromJson(data as Map<String, dynamic>),
     );
   }
 
   /// Get user list
-  Future<ApiResponse<List<UserModel>>> getUserList({
+  Future<ApiResponse<List<User>>> getUserList({
     int page = 1,
     int limit = 20,
   }) async {
-    return await get<List<UserModel>>(
+    return await get<List<User>>(
       endpoint: Endpoints.apiPath('/users'),
       queryParameters: {
         'page': page,
@@ -76,7 +44,7 @@ class UserRemoteDataSource extends RemoteDataSource {
       parser: (data) {
         if (data is List) {
           return data.map((json) => 
-            UserModel.fromJson(json as Map<String, dynamic>)
+            User.fromJson(json as Map<String, dynamic>)
           ).toList();
         }
         return [];
@@ -91,15 +59,15 @@ class UserLocalDataSource extends LocalDataSource {
   static const String _userListCacheKey = 'user_list_cache';
 
   /// Save user to cache
-  Future<void> cacheUser(UserModel user) async {
+  Future<void> cacheUser(User user) async {
     await save(_userCacheKey, user.toJson());
   }
 
   /// Get cached user
-  UserModel? getCachedUser() {
+  User? getCachedUser() {
     final data = get<Map<String, dynamic>>(_userCacheKey);
     if (data != null) {
-      return UserModel.fromJson(data);
+      return User.fromJson(data);
     }
     return null;
   }
@@ -127,17 +95,17 @@ class UserRepository extends Repository {
         );
 
   /// Get user profile with caching
-  Future<ApiResponse<UserModel>> getUserProfile(String userId) async {
-    return await executeWithCache<UserModel>(
+  Future<ApiResponse<User>> getUserProfile(String userId) async {
+    return await executeWithCache<User>(
       remoteCall: () => _remoteDataSource.getUserProfile(userId),
       cacheKey: 'user_profile_$userId',
       cacheDuration: const Duration(minutes: 5),
-      parser: (data) => UserModel.fromJson(data as Map<String, dynamic>),
+      parser: (data) => User.fromJson(data as Map<String, dynamic>),
     );
   }
 
   /// Update user profile
-  Future<ApiResponse<UserModel>> updateUserProfile({
+  Future<ApiResponse<User>> updateUserProfile({
     required String userId,
     required Map<String, dynamic> data,
   }) async {
@@ -148,18 +116,18 @@ class UserRepository extends Repository {
 
     // Clear cache after update
     if (response.success && _localDataSource != null) {
-      await clearCache('user_profile_$userId');
+      await invalidateCache('user_profile_$userId');
     }
 
     return response;
   }
 
   /// Get user list with caching
-  Future<ApiResponse<List<UserModel>>> getUserList({
+  Future<ApiResponse<List<User>>> getUserList({
     int page = 1,
     int limit = 20,
   }) async {
-    return await executeWithCache<List<UserModel>>(
+    return await executeWithCache<List<User>>(
       remoteCall: () => _remoteDataSource.getUserList(
         page: page,
         limit: limit,
@@ -169,7 +137,7 @@ class UserRepository extends Repository {
       parser: (data) {
         if (data is List) {
           return data.map((json) => 
-            UserModel.fromJson(json as Map<String, dynamic>)
+            User.fromJson(json as Map<String, dynamic>)
           ).toList();
         }
         return [];

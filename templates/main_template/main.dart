@@ -8,8 +8,8 @@ import 'dart:io' show Platform;
 
 import 'app/routes/app_pages.dart';
 import 'app/services/storage.dart';
-import '../dio_template/endpoints.dart';
-import '../dio_template/network_connectivity.dart';
+import 'dio_template/endpoints.dart';
+import 'dio_template/network_connectivity.dart';
 
 /// Main entry point of the application
 /// Handles initialization, error handling, and app configuration
