@@ -1,0 +1,18 @@
+name: getx_cli_template
+description: Minimal GetX app template with Home module (view, controller, binding) and routing
+destination: lib/
+files:
+  - source: lib/main.dart
+    destination: lib/main.dart
+  - source: lib/app/routes/app_pages.dart
+    destination: lib/app/routes/app_pages.dart
+  - source: lib/app/routes/app_routes.dart
+    destination: lib/app/routes/app_routes.dart
+  - source: lib/app/modules/home/bindings/home_binding.dart
+    destination: lib/app/modules/home/bindings/home_binding.dart
+  - source: lib/app/modules/home/controllers/home_controller.dart
+    destination: lib/app/modules/home/controllers/home_controller.dart
+  - source: lib/app/modules/home/views/home_view.dart
+    destination: lib/app/modules/home/views/home_view.dart
+
+
