@@ -1,6 +1,7 @@
 name: dioiu
 description: Advanced dio setup with clean architecture
 destination: lib/
+args: []
 files:
   - source: api_response.dart
     destination: lib/dio_template/api_response.dart

@@ -1,6 +1,7 @@
 name: mainiu
 description: Advanced GetX main template with home module, services, and dio utilities
 destination: lib/
+args: []
 files:
   - source: main.dart
     destination: lib/main.dart
