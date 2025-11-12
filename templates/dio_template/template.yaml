@@ -1,45 +1,45 @@
 name: dioiu
 description: Advanced dio setup with clean architecture
-destination: lib/
+to: lib
 args: []
 files:
   - source: api_response.dart
-    destination: lib/dio_template/api_response.dart
+    to: dio_template/api_response.dart
   - source: api_service.dart
-    destination: lib/dio_template/api_service.dart
+    to: dio_template/api_service.dart
   - source: app_interceptors.dart
-    destination: lib/dio_template/app_interceptors.dart
+    to: dio_template/app_interceptors.dart
   - source: client.dart
-    destination: lib/dio_template/client.dart
+    to: dio_template/client.dart
   - source: endpoints.dart
-    destination: lib/dio_template/endpoints.dart
+    to: dio_template/endpoints.dart
   - source: example_user_repository.dart
-    destination: lib/dio_template/example_user_repository.dart
+    to: dio_template/example_user_repository.dart
   - source: exceptions.dart
-    destination: lib/dio_template/exceptions.dart
+    to: dio_template/exceptions.dart
   - source: jwt_decoder.dart
-    destination: lib/dio_template/jwt_decoder.dart
+    to: dio_template/jwt_decoder.dart
   - source: local_data_source.dart
-    destination: lib/dio_template/local_data_source.dart
+    to: dio_template/local_data_source.dart
   - source: mock_data_source.dart
-    destination: lib/dio_template/mock_data_source.dart
+    to: dio_template/mock_data_source.dart
   - source: network_connectivity.dart
-    destination: lib/dio_template/network_connectivity.dart
+    to: dio_template/network_connectivity.dart
   - source: rate_limiter.dart
-    destination: lib/dio_template/rate_limiter.dart
+    to: dio_template/rate_limiter.dart
   - source: README.md
-    destination: lib/dio_template/README.md
+    to: dio_template/README.md
   - source: remote_data_source.dart
-    destination: lib/dio_template/remote_data_source.dart
+    to: dio_template/remote_data_source.dart
   - source: repository.dart
-    destination: lib/dio_template/repository.dart
+    to: dio_template/repository.dart
   - source: request_logger.dart
-    destination: lib/dio_template/request_logger.dart
+    to: dio_template/request_logger.dart
   - source: request_queue.dart
-    destination: lib/dio_template/request_queue.dart
+    to: dio_template/request_queue.dart
   - source: retry_policy.dart
-    destination: lib/dio_template/retry_policy.dart
+    to: dio_template/retry_policy.dart
   - source: models/user.dart
-    destination: lib/dio_template/models/user.dart
+    to: dio_template/models/user.dart
 
     

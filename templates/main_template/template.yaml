@@ -1,25 +1,25 @@
 name: mainiu
 description: Advanced GetX main template with home module, services, and dio utilities
-destination: lib/
+to: lib
 args: []
 files:
   - source: main.dart
-    destination: lib/main.dart
+    to: main.dart
   - source: app/routes/app_pages.dart
-    destination: lib/app/routes/app_pages.dart
+    to: app/routes/app_pages.dart
   - source: app/routes/app_routes.dart
-    destination: lib/app/routes/app_routes.dart
+    to: app/routes/app_routes.dart
   - source: app/modules/home/bindings/home_binding.dart
-    destination: lib/app/modules/home/bindings/home_binding.dart
+    to: app/modules/home/bindings/home_binding.dart
   - source: app/modules/home/controllers/home_controller.dart
-    destination: lib/app/modules/home/controllers/home_controller.dart
+    to: app/modules/home/controllers/home_controller.dart
   - source: app/modules/home/views/home_view.dart
-    destination: lib/app/modules/home/views/home_view.dart
+    to: app/modules/home/views/home_view.dart
   - source: app/services/storage.dart
-    destination: lib/app/services/storage.dart
+    to: app/services/storage.dart
   - source: app/services/enigma.dart
-    destination: lib/app/services/enigma.dart
+    to: app/services/enigma.dart
   - source: dio_template/endpoints.dart
-    destination: lib/dio_template/endpoints.dart
+    to: dio_template/endpoints.dart
   - source: dio_template/network_connectivity.dart
-    destination: lib/dio_template/network_connectivity.dart
+    to: dio_template/network_connectivity.dart
