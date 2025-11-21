@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c574de3-2bc8-4dc9-a13d-182292e2446a" name="Changes" comment="feat: Add network, storage, and encryption services&#10;&#10;Added several new service and utility files to enhance networking, data persistence, and security.&#10;&#10;- `endpoints.dart`: Introduced for API endpoint and environment configuration.&#10;- `enigma.dart`: Added for AES encryption/decryption compatible with CryptoJS.&#10;- `network_connectivity.dart`: Implemented to check and monitor network status.&#10;- `storage.dart`: Created a secure storage service using GetStorage with encryption.&#10;&#10;Updated `dio_template/template.yaml` to include the new files and restructure the template for an advanced Dio setup.">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/commands.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dio_template/remote_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dio_template/remote_data_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dio_template/request_queue.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dio_template/request_queue.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dio_template/retry_policy.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dio_template/retry_policy.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/services_template/storage.dart" beforeDir="false" afterPath="$PROJECT_DIR$/templates/services_template/storage.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +38,12 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dev-ideausher/iu_plugin",
-    "accountId": "e14432f8-7df3-4227-b148-a9bd57cd7af5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dev-ideausher/iu_plugin&quot;,
+    &quot;accountId&quot;: &quot;e14432f8-7df3-4227-b148-a9bd57cd7af5&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -133,7 +139,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762934686053</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: Add network, storage, and encryption services&#10;&#10;Added several new service and utility files to enhance networking, data persistence, and security.&#10;&#10;- `endpoints.dart`: Introduced for API endpoint and environment configuration.&#10;- `enigma.dart`: Added for AES encryption/decryption compatible with CryptoJS.&#10;- `network_connectivity.dart`: Implemented to check and monitor network status.&#10;- `storage.dart`: Created a secure storage service using GetStorage with encryption.&#10;&#10;Updated `dio_template/template.yaml` to include the new files and restructure the template for an advanced Dio setup.">
+      <option name="closed" value="true" />
+      <created>1762935628481</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762935628481</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Add network, storage, and encryption services&#10;&#10;Added several new service and utility files to enhance networking, data persistence, and security.&#10;&#10;- `endpoints.dart`: Introduced for API endpoint and environment configuration.&#10;- `enigma.dart`: Added for AES encryption/decryption compatible with CryptoJS.&#10;- `network_connectivity.dart`: Implemented to check and monitor network status.&#10;- `storage.dart`: Created a secure storage service using GetStorage with encryption.&#10;&#10;Updated `dio_template/template.yaml` to include the new files and restructure the template for an advanced Dio setup.">
+      <option name="closed" value="true" />
+      <created>1762935896742</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1762935896742</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

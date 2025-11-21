@@ -14,10 +14,10 @@ abstract class RemoteDataSource {
 
   /// Handle API response and convert to ApiResponse
   ApiResponse<T> handleResponse<T>(
-    Response response, {
-    T Function(dynamic)? parser,
-  }) {
-    return ApiResponse.fromResponse<T>(response, parser);
+      Response response, {
+        T Function(dynamic)? parser,
+      }) {
+    return ApiResponse.fromResponse(response, parser);
   }
 
   /// Handle errors and convert to ApiResponse

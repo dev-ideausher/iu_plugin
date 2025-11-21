@@ -25,7 +25,7 @@ class QueuedRequest<T> {
   }) : timestamp = timestamp ?? DateTime.now();
 
   int get retryCount => _retryCount;
-  bool get canRetry => maxRetries == null || _retryCount < maxRetries;
+  bool get canRetry => maxRetries == null || _retryCount < (maxRetries??0);
 
   void incrementRetry() {
     _retryCount++;
@@ -53,10 +53,10 @@ class RequestQueue {
   void _initialize() {
     _connectivitySubscription =
         NetworkConnectivity.instance.onConnectivityChanged.listen((isConnected) {
-      if (isConnected) {
-        _processQueue();
-      }
-    });
+          if (isConnected) {
+            _processQueue();
+          }
+        });
   }
 
   /// Add request to queue
@@ -67,7 +67,7 @@ class RequestQueue {
     int? maxRetries,
   }) async {
     final completer = Completer<ApiResponse<T>>();
-    
+
     final queuedRequest = QueuedRequest<T>(
       id: id,
       request: request,
@@ -102,7 +102,7 @@ class RequestQueue {
 
       try {
         final response = await request.request();
-        
+
         if (request.completer.isCompleted) continue;
         request.completer.complete(response);
 
@@ -113,19 +113,19 @@ class RequestQueue {
         if (request.canRetry) {
           request.incrementRetry();
           _queue.add(request);
-          
+
           if (kDebugMode) {
             developer.log(
               'Request failed, retrying: ${request.id} (${request.retryCount}/${request.maxRetries})',
             );
           }
-          
+
           // Wait before retry
           await Future.delayed(Duration(seconds: request.retryCount));
         } else {
           if (request.completer.isCompleted) continue;
           request.completer.completeError(e);
-          
+
           if (kDebugMode) {
             developer.log('Request failed permanently: ${request.id}');
           }
@@ -147,7 +147,7 @@ class RequestQueue {
       }
     }
     _queue.clear();
-    
+
     if (kDebugMode) {
       developer.log('Request queue cleared');
     }
