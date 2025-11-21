@@ -50,7 +50,7 @@ class ApiResponse<T> {
   }
 
   /// Create ApiResponse from Dio Response
-  factory ApiResponse.fromResponse<T>(Response response, T Function(dynamic)? parser) {
+  factory ApiResponse.fromResponse(Response response, T Function(dynamic)? parser) {
     try {
       final data = response.data;
       
@@ -117,4 +117,3 @@ class ApiResponse<T> {
     return 'ApiResponse(success: $success, message: $message, statusCode: $statusCode)';
   }
 }
-
