@@ -85,7 +85,7 @@ class HexColor extends Color {
   /// HexColor.withAlpha('#FF5733', 0.5) // 50% opacity red
   /// ```
   HexColor.withAlpha(String hexColor, double alpha)
-      : super(_getColorFromHex(hexColor).withAlpha((alpha * 255).round()));
+      : super(Color(_getColorFromHex(hexColor)).withAlpha((alpha * 255).round()).value);
 
   /// Create HexColor from RGB values
   /// 
@@ -94,7 +94,7 @@ class HexColor extends Color {
   /// HexColor.fromRGB(255, 87, 51) // Red color
   /// ```
   HexColor.fromRGB(int r, int g, int b)
-      : super(Color.fromRGBO(r, g, b, 1.0).value);
+      : super(Color.fromARGB(255, r, g, b).value);
 
   /// Create HexColor from RGBA values
   /// 
@@ -141,23 +141,17 @@ class HexColor extends Color {
   /// Create lighter version of color
   /// [amount] - Amount to lighten (0.0 to 1.0)
   Color lighter([double amount = 0.1]) {
-    return Color.fromRGBO(
-      (red + (255 - red) * amount).round(),
-      (green + (255 - green) * amount).round(),
-      (blue + (255 - blue) * amount).round(),
-      alphaDouble,
-    );
+    final hsl = HSLColor.fromColor(this);
+    final lighterHsl = hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
+    return lighterHsl.toColor();
   }
 
   /// Create darker version of color
   /// [amount] - Amount to darken (0.0 to 1.0)
   Color darker([double amount = 0.1]) {
-    return Color.fromRGBO(
-      (red * (1 - amount)).round(),
-      (green * (1 - amount)).round(),
-      (blue * (1 - amount)).round(),
-      alphaDouble,
-    );
+    final hsl = HSLColor.fromColor(this);
+    final darkerHsl = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+    return darkerHsl.toColor();
   }
 }
 
